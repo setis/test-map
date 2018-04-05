@@ -23,9 +23,9 @@ export class AppComponent implements OnInit {
 
   }
   onSubmit(){
-    this.lat = this.form.value.latitude;
-    this.lng = this.form.value.longitude
-
+    this.lat = parseFloat(this.form.value.latitude);
+    this.lng = parseFloat(this.form.value.longitude)
+    console.log(this.lat,this.lng)
   }
 
 
@@ -38,6 +38,7 @@ export class AppComponent implements OnInit {
         Validators.required,
       ]),
     });
+    this.onSubmit();
 
   }
 
